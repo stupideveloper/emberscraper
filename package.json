@@ -1,10 +1,11 @@
 {
-  "name": "emberpulse-scraper",
+  "name": "scraper-tools",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "scrape.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node scrape.js"
   },
   "keywords": [],
   "author": "Lachlan Kemp",
