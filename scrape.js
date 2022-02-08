@@ -1,12 +1,12 @@
 require('dotenv').config();
 const puppeteer = require('puppeteer')
 const fastify = require('fastify')({
-  logger: false
+  logger: true
 })
 const username = process.env.EMBERPULSE_USERNAME
 const password = process.env.EMBERPULSE_PASSWORD
 async function scrape() {
-  const browser = await puppeteer.launch({headless: true});
+  const browser = await puppeteer.launch({headless: true,  args: ['--no-sandbox']});
   const page = await browser.newPage();
   await page.setViewport({width: 1200, height: 720});
   await page.goto('https://emberpulse.com.au/login', { waitUntil: 'networkidle0' }); // wait until page load
